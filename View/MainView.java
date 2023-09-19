@@ -3,7 +3,6 @@ package View;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,13 +26,11 @@ public class MainView {
 
         //Main Window
         JFrame frame = new JFrame();
-        ImageIcon img = new ImageIcon("Images/room.png");
-        frame.setIconImage(img.getImage());
-		frame.setSize(1250,1000);
+	frame.setSize(1250,1000);
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	frame.setTitle("Raum Reservierung");
         frame.setLayout(new BorderLayout());
-		//frame.getContentPane().setLayout(null);
+	//frame.getContentPane().setLayout(null);
 
         //Reservation-Elemente
         String[][] reservations = reservationService.getAllReservations();
@@ -48,7 +45,7 @@ public class MainView {
 
         this.createReservationButton = new JButton("Reservierungsdialog");
         //this.createReservationButton.setSize(300, 30);
-		//this.createReservationButton.setLocation(1295, 123);
+	//this.createReservationButton.setLocation(1295, 123);
         //frame.add(this.createReservationButton);
         this.createReservationButton.addActionListener(e -> {
                 new ReservationForm(frame, this.userService, this.roomService, reservationService, reservationTable);
